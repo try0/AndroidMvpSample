@@ -2,19 +2,15 @@ package jp.try0.android.mvpsample.content.main;
 
 import android.util.Log;
 
-import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import java.util.Map;
+import java.util.Objects;
 
 import javax.inject.Inject;
 
-import jp.try0.android.mvpsample.api.ApiCommunicationEvent;
 import jp.try0.android.mvpsample.api.IGitHubApiService;
-import jp.try0.android.mvpsample.api.res.GitHubUserInfo;
 import jp.try0.android.mvpsample.usecase.IMainUseCase;
-import okhttp3.ResponseBody;
 
 public class MainPresenter implements MainContract.Presenter {
 
@@ -52,9 +48,9 @@ public class MainPresenter implements MainContract.Presenter {
 
     @SuppressWarnings("unused")
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onFetchedUserInformation(ApiCommunicationEvent<GitHubUserInfo> event) {
+    public void onFetchedUserInformation(IGitHubApiService.FetchUserEvent event) {
         try {
-            view.printUserInformation(event.getResponse().body());
+            view.printUserInformation(event.response.body());
         } catch (Exception e) {
             e.printStackTrace();
         }
