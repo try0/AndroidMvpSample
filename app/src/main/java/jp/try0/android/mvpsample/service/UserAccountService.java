@@ -9,11 +9,12 @@ import javax.inject.Inject;
 import io.objectbox.Box;
 import io.objectbox.BoxStore;
 import jp.try0.android.mvpsample.db.entity.User;
+import jp.try0.android.mvpsample.di.DaggerAppComponent;
 
 public class UserAccountService implements IUserAccountService {
 
     @Inject
-    BoxStore sotre;
+    BoxStore boxStore;
 
     @Inject
     public UserAccountService() {
@@ -25,20 +26,17 @@ public class UserAccountService implements IUserAccountService {
     }
 
     @Override
-    public void saveUser(final User user) {
+    public void addUser(final User user) {
 
-        final Box<User> userBox = sotre.boxFor(User.class);
+        final Box<User> userBox = boxStore.boxFor(User.class);
 
-        sotre.runInTx(new Runnable() {
-            @Override
-            public void run() {
-                userBox.put(user);
-            }
+        boxStore.runInTx(() -> {
+            userBox.put(user);
         });
     }
 
     @Override
     public User getUser() {
-        return sotre.boxFor(User.class).query().build().findFirst();
+        return boxStore.boxFor(User.class).query().build().findFirst();
     }
 }

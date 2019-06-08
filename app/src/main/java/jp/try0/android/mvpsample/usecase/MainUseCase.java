@@ -25,7 +25,7 @@ public class MainUseCase implements IMainUseCase {
         User user = new User();
         user.name = "User Name";
 
-        sUserAccount.saveUser(user);
+        sUserAccount.addUser(user);
 
         User selected = sUserAccount.getUser();
         Log.i("MainUseCase", selected.name);

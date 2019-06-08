@@ -5,9 +5,10 @@ import dagger.Module;
 import jp.try0.android.mvpsample.usecase.IMainUseCase;
 import jp.try0.android.mvpsample.usecase.MainUseCase;
 
+@SuppressWarnings("unused")
 @Module
 public abstract class UseCaseModule {
 
     @Binds
-   abstract IMainUseCase bindMainUseCase(MainUseCase useCase);
+    abstract IMainUseCase bindMainUseCase(MainUseCase useCase);
 }

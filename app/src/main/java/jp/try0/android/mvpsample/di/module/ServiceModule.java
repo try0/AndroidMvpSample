@@ -8,6 +8,7 @@ import jp.try0.android.mvpsample.service.UserAccountService;
 /**
  * サービスモジュール
  */
+@SuppressWarnings("unused")
 @Module
 public abstract class ServiceModule {
     @Binds

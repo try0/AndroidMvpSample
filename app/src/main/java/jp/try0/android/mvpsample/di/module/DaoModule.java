@@ -12,6 +12,7 @@ import jp.try0.android.mvpsample.db.ObjectBox;
 /**
  * データ関連モジュール
  */
+@SuppressWarnings("unused")
 @Module
 public class DaoModule {
 

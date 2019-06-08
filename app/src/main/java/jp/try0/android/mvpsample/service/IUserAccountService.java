@@ -6,7 +6,7 @@ public interface IUserAccountService {
 
     void print();
 
-    void saveUser(User user);
+    void addUser(User user);
 
     User getUser();
 }

@@ -11,6 +11,7 @@ import jp.try0.android.mvpsample.MvpSampleApp;
 /**
  * Application Module
  */
+@SuppressWarnings("unused")
 @Module
 public class AppModule {
 

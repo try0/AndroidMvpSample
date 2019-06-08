@@ -8,6 +8,7 @@ import jp.try0.android.mvpsample.content.main.MainActivityModule;
 /**
  * ActivityModule
  */
+@SuppressWarnings("unused")
 @Module(includes = UseCaseModule.class)
 public abstract class ActivityModule {
 

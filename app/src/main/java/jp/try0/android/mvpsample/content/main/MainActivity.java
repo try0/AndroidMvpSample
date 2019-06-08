@@ -17,30 +17,26 @@ import javax.inject.Inject;
 
 import dagger.android.support.DaggerAppCompatActivity;
 import jp.try0.android.mvpsample.R;
+import jp.try0.android.mvpsample.content.BaseActivity;
 
-public class MainActivity extends DaggerAppCompatActivity
+public class MainActivity extends BaseActivity<MainContract.Presenter>
         implements NavigationView.OnNavigationItemSelectedListener, MainContract.View {
 
-
-    @Inject
-    MainContract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        presenter.print();
+        presenter().print();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new android.view.View.OnClickListener() {
-            @Override
-            public void onClick(android.view.View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
+        fab.setOnClickListener(v -> {
+            Snackbar.make(v, "Replace with your own action", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
+
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);

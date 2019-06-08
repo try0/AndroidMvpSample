@@ -3,6 +3,7 @@ package jp.try0.android.mvpsample.content.main;
 import dagger.Binds;
 import dagger.Module;
 
+@SuppressWarnings("unused")
 @Module
 public interface MainActivityModule {
 
