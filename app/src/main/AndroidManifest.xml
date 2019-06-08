@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="jp.try0.android.mvpsample">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MvpSampleApp"
         android:allowBackup="true"

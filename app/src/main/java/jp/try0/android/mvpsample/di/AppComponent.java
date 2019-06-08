@@ -9,8 +9,10 @@ import dagger.android.AndroidInjector;
 import dagger.android.support.AndroidSupportInjectionModule;
 import jp.try0.android.mvpsample.MvpSampleApp;
 import jp.try0.android.mvpsample.di.module.ActivityModule;
+import jp.try0.android.mvpsample.di.module.ApiModule;
 import jp.try0.android.mvpsample.di.module.AppModule;
 import jp.try0.android.mvpsample.di.module.DaoModule;
+import jp.try0.android.mvpsample.di.module.EventBusModule;
 import jp.try0.android.mvpsample.di.module.ServiceModule;
 
 @Singleton
@@ -18,6 +20,8 @@ import jp.try0.android.mvpsample.di.module.ServiceModule;
         AndroidSupportInjectionModule.class,
         AndroidInjectionModule.class,
         AppModule.class,
+        EventBusModule.class,
+        ApiModule.class,
         ServiceModule.class,
         DaoModule.class,
         ActivityModule.class})

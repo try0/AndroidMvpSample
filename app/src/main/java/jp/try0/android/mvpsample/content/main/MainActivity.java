@@ -17,6 +17,7 @@ import javax.inject.Inject;
 
 import dagger.android.support.DaggerAppCompatActivity;
 import jp.try0.android.mvpsample.R;
+import jp.try0.android.mvpsample.api.res.GitHubUserInfo;
 import jp.try0.android.mvpsample.content.BaseActivity;
 
 public class MainActivity extends BaseActivity<MainContract.Presenter>
@@ -28,7 +29,7 @@ public class MainActivity extends BaseActivity<MainContract.Presenter>
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        presenter().print();
+        presenter().printUserInformation("try0");
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -104,8 +105,9 @@ public class MainActivity extends BaseActivity<MainContract.Presenter>
         return true;
     }
 
+
     @Override
-    public void printedInformation() {
-        Log.i("MainActivity", "printedInformation");
+    public void printUserInformation(GitHubUserInfo userInformation) {
+        Log.i("UserInformation", userInformation.name);
     }
 }
