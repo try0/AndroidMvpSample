@@ -2,6 +2,6 @@
 MVPサンプルプロジェクト
 
 Dagger2  
-Retrofit
-EventBus
-ObjectBox
+Retrofit  
+EventBus  
+ObjectBox  
